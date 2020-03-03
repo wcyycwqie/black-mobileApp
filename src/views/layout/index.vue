@@ -4,6 +4,7 @@
       fixed
       title="今日欢喜"
       right-text="搜索"
+      left-text="<-"
       @click-right="$router.push('/search')"
     >
     </van-nav-bar>
@@ -11,10 +12,10 @@
       <router-view></router-view>
     </div>
     <van-tabbar route>
-      <van-tabbar-item to="/home" icon="home-o">home</van-tabbar-item>
-      <van-tabbar-item to="/question">ask</van-tabbar-item>
-      <van-tabbar-item to="/video">video</van-tabbar-item>
-      <van-tabbar-item>own</van-tabbar-item>
+      <van-tabbar-item to="/home" icon="home-o">主页</van-tabbar-item>
+      <van-tabbar-item to="/question" icon="question-o">答疑</van-tabbar-item>
+      <van-tabbar-item to="/video" icon="video-o">视频</van-tabbar-item>
+      <van-tabbar-item to="/user" icon="user-o">个人</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -40,6 +41,27 @@ export default {
     &.noTop {
       padding-top: 0;
     }
+  }
+}
+.van-nav-bar {
+  background: #690069;
+  color: #fff;
+
+  .van-nav-bar__title,
+  .van-nav-bar__text {
+    color: #fff;
+  }
+}
+.van-tabbar {
+  background: #fdfdfd;
+  .van-tabbar-item {
+    // color: #000;
+  }
+  .van-tabbar-item--active {
+    color: #f100c8;
+  }
+  .van-nav-bar__text:active {
+    background: transparent;
   }
 }
 </style>

@@ -7,6 +7,7 @@ import Vant from 'vant'
 // 静态资源
 import 'vant/lib/index.css'
 import 'amfe-flexible/index.min.js'
+import '@/style/base.less'
 
 Vue.config.productionTip = false
 
