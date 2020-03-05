@@ -5,7 +5,7 @@
     <van-form @submit="onSubmit">
       <van-cell-group>
         <van-field
-          v-model="username"
+          v-model="loginForm.username"
           name="用户名"
           label="用户名"
           placeholder="用户名"
@@ -13,7 +13,7 @@
           :rules="[{ required: true, message: '请填写用户名' }]"
         />
         <van-field
-          v-model="password"
+          v-model="loginForm.password"
           type="password"
           name="密码"
           label="密码"
@@ -21,7 +21,7 @@
           :rules="[{ required: true, message: '请填写密码' }]"
         />
         <van-field
-          v-model="mobile"
+          v-model="loginForm.mobile"
           type="tel"
           label="手机号码"
           placeholder="请输入手机号码"
@@ -30,7 +30,13 @@
           clearable
           error-message="error"
         />
-        <van-field v-model="code" name="yzm" label="yzm" required clearable />
+        <van-field
+          v-model="loginForm.code"
+          name="yzm"
+          label="yzm"
+          required
+          clearable
+        />
       </van-cell-group>
       <div style="margin: 20px;">
         <van-button
@@ -51,10 +57,12 @@
 export default {
   data () {
     return {
-      username: 'a',
-      password: '123',
-      mobile: '',
-      code: ''
+      loginForm: {
+        username: 'a',
+        password: '123',
+        mobile: '',
+        code: ''
+      }
     }
   },
   methods: {
@@ -62,7 +70,6 @@ export default {
       console.log('hoho')
       if (this.username == 'a' && this.password == 123) {
         this.$router.push('/')
-
       }
 
     }
