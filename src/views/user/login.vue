@@ -23,12 +23,13 @@
         <van-field
           v-model="mobile"
           type="tel"
+          label="手机号码"
           placeholder="请输入手机号码"
           name="phone"
           required
           clearable
-          error-message="errorrrr"
-        />>
+          error-message="error"
+        />
         <van-field v-model="code" name="yzm" label="yzm" required clearable />
       </van-cell-group>
       <div style="margin: 20px;">
