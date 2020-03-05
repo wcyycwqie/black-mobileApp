@@ -9,8 +9,8 @@ import request from '@/utils/request'
 // export const getUserInfo = ({username, password}) => creteAPI('/', 'GET', {username, password})
 
 export const userLogin = ({mobile, code}) => {
-  request({
-    url: '/',
+  return request({
+    url: '/app/v1_0/authorizations',
     method: 'POST',
     data: {
       mobile,

@@ -33,17 +33,22 @@
         <van-field
           v-model="loginForm.code"
           name="yzm"
-          label="yzm"
+          label="验证码"
           required
           clearable
-        />
+        >
+          <van-button slot="button" size="small" type="primary"
+            >发送验证码</van-button
+          >
+        </van-field>
       </van-cell-group>
+
       <div style="margin: 20px;">
         <van-button
           class="btn-submit"
           round
           block
-          type="info"
+          color="#690069"
           native-type="submit"
         >
           提交
@@ -54,23 +59,35 @@
 </template>
 
 <script>
+// 导入验证API
+import { userLogin } from '@/api/user'
+
 export default {
   data () {
     return {
       loginForm: {
         username: 'a',
         password: '123',
-        mobile: '',
-        code: ''
-      }
+        mobile: '13911111111',
+        code: '24681'
+      },
+      check: true
     }
   },
   methods: {
-    onSubmit (values) {
+    async onSubmit (values) {
       console.log('hoho')
-      if (this.username == 'a' && this.password == 123) {
-        this.$router.push('/')
+      try {
+        console.log('try')
+        const res =  await userLogin(this.loginForm)
+        console.log(res)
+
+      } catch (err) {
+        console.log('catch')
+        return this.$toast.fail('用户名或密码错误' + err)
       }
+      this.$toast.success('登录成功')
+      this.$router.push('/home')
 
     }
   }
@@ -81,8 +98,8 @@ export default {
 <style lang="less" scoped>
 .van-form {
   margin-top: 15px;
-  .btn-submit {
-    background: #690069;
-  }
+  // .btn-submit {
+  //   background: #690069;
+  // }
 }
 </style>
