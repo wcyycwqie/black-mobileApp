@@ -4,7 +4,6 @@
       fixed
       title="今日欢喜"
       right-text="搜索"
-      left-text="<-"
       @click-right="$router.push('/search')"
     >
     </van-nav-bar>
@@ -43,25 +42,5 @@ export default {
     }
   }
 }
-.van-nav-bar {
-  background: #690069;
-  color: #fff;
 
-  .van-nav-bar__title,
-  .van-nav-bar__text {
-    color: #fff;
-  }
-}
-.van-tabbar {
-  background: #fdfdfd;
-  .van-tabbar-item {
-    // color: #000;
-  }
-  .van-tabbar-item--active {
-    color: #f100c8;
-  }
-  .van-nav-bar__text:active {
-    background: transparent;
-  }
-}
 </style>

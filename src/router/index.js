@@ -9,7 +9,7 @@ const routes = [{
     path: '/',
     name: 'Layout',
     component: Layout,
-    redirect: '/home', // url重定向到 /home
+    redirect: '/login', // url重定向到 /home
     children: [{
         path: '/home',
         component: () => import('@/views/home')
@@ -28,7 +28,16 @@ const routes = [{
         component: () => import('@/views/user')
       }
     ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/user/login')
+  },
+  {
+    path: '*',
+    redirect: '/login'
   }
+
 
 ]
 
