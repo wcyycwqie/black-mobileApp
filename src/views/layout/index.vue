@@ -2,7 +2,7 @@
   <div class="layout container">
     <van-nav-bar
       fixed
-      title="今日欢喜"
+      title="每日一悦"
       right-text="搜索"
       @click-right="$router.push('/search')"
     >

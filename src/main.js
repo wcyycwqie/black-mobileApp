@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store' // vuex
 import Vant from 'vant' // vant框架
-import '@/utils/validata.js' // 验证相关
+import '@/utils/validate.js' // 验证相关
 
 // 静态资源
 import 'vant/lib/index.css'

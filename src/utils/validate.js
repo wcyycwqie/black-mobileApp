@@ -19,3 +19,12 @@ localize('zhCN')
 Object.keys(rules).forEach((val, index) => {
   extend(val, rules[val])
 })
+
+extend('phone', {
+   validate: value => {
+    const reg = /^1[35789]\d{9}$/
+    return reg.test(value)
+   },
+   message: '{_field_}格式不正确'
+
+})
